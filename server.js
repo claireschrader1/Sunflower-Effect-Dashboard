@@ -1,6 +1,10 @@
 import express from 'express';
 import Database from 'better-sqlite3';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -77,6 +81,9 @@ if (!hasEnquiries) {
 
 app.use(express.json());
 
+// Serve the built React app
+app.use(express.static(path.join(__dirname, 'dist')));
+
 // --- ROUTES ---
 
 // Enquiries
@@ -117,6 +124,11 @@ app.patch('/api/content/:id', (req, res) => {
 app.get('/api/invoices', (req, res) => {
   const data = db.prepare("SELECT * FROM invoices").all();
   res.json(data);
+});
+
+// All other routes serve the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
