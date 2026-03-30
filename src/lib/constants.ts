@@ -1,0 +1,36 @@
+import { 
+  LayoutDashboard, 
+  PenTool, 
+  BookOpen, 
+  FileText, 
+  RefreshCw, 
+  MessageSquare, 
+  Calendar, 
+  Youtube, 
+  Globe, 
+  MapPin, 
+  Mail, 
+  TrendingUp, 
+  Megaphone, 
+  User, 
+  Sun,
+  BarChart3
+} from 'lucide-react';
+
+export const SECTIONS = [
+  { id: 'briefing', name: 'Daily Briefing', icon: Sun, color: 'bg-hot-orange', path: '/' },
+  { id: 'enquiry', name: 'Enquiry Management', icon: MessageSquare, color: 'bg-yellowish', path: '/enquiry' },
+  { id: 'booking', name: 'Booking Management', icon: Calendar, color: 'bg-hot-orange', path: '/booking' },
+  { id: 'templates', name: 'Template Updates', icon: RefreshCw, color: 'bg-sunglow', path: '/templates' },
+  { id: 'newsletter', name: 'Newsletter Updates', icon: Mail, color: 'bg-sunglow', path: '/newsletter' },
+  { id: 'google', name: 'Google Profile', icon: MapPin, color: 'bg-hot-orange', path: '/google' },
+  { id: 'website', name: 'Website Updates', icon: Globe, color: 'bg-yellowish', path: '/website' },
+  { id: 'impact', name: 'Impact Study Management', icon: BarChart3, color: 'bg-yellowish', path: '/impact' },
+  { id: 'personal', name: 'Personal Tab', icon: User, color: 'bg-sunglow', path: '/personal' },
+  { id: 'content', name: 'Content Studio', icon: PenTool, color: 'bg-sunglow', path: '/content' },
+  { id: 'knowledge', name: 'Knowledge Base', icon: BookOpen, color: 'bg-yellowish', path: '/knowledge' },
+  { id: 'invoices', name: 'Invoices & Receipts', icon: FileText, color: 'bg-hot-orange', path: '/invoices' },
+  { id: 'youtube', name: 'YouTube Editing', icon: Youtube, color: 'bg-sunglow', path: '/youtube' },
+  { id: 'promotion', name: 'Book Promotion', icon: TrendingUp, color: 'bg-yellowish', path: '/promotion' },
+  { id: 'publicity', name: 'Publicity & PR', icon: Megaphone, color: 'bg-hot-orange', path: '/publicity' },
+];
